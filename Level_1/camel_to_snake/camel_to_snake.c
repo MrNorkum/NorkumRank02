@@ -1,0 +1,15 @@
+#include <unistd.h>
+
+int main(int ac, char **av)
+{
+	for (; ac == 2 && *av[1]; av[1]++)
+	{
+		if ('A' <= *av[1] && *av[1] <= 'Z')
+		{
+			write(1, "_", 1);
+			*av[1] += 32;
+		}
+		write(1, av[1], 1);
+	}
+	write(1, "\n", 1);
+}
