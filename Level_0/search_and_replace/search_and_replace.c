@@ -9,7 +9,7 @@ int	main(int ac, char **av)
 {
 	if (ac == 4 && isalpha(av[2][0]) && !av[2][1] && isalpha(av[3][0]) && !av[3][1])
 	{
-        for (int i = 0; av[1][i]; i++)
+        	for (int i = 0; av[1][i]; i++)
 		{
 			if (av[1][i] == av[2][0])
 				av[1][i] = av[3][0];
