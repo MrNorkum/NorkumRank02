@@ -1,4 +1,4 @@
-void	ft_swap(int *a, int *b)
+void	ft_swap(char *a, char *b)
 {
 	*a = *a + *b;
 	*b = *a - *b;
