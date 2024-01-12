@@ -1,7 +1,7 @@
 
 #include <stdlib.h>
 
-int	numlen(int n)
+int	numlen(long n)
 {
 	int len = 0;
 	if (n <= 0)
