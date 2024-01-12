@@ -17,7 +17,7 @@ void	sort_int_tab(int *tab, unsigned int size)
 		is_swap = 0;
 		while (++i < size - 1)
 		{
-			if (tab[i] < tab[i + 1])
+			if (tab[i] > tab[i + 1])
 				is_swap = ft_swap(&tab[i], &tab[i + 1]);
 		}
 	}
