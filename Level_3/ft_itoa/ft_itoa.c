@@ -1,37 +1,37 @@
-
 #include <stdlib.h>
 
-int	numlen(long n)
+static unsigned char	ft_numlen(long num)
 {
-	int len = 0;
-	if (n <= 0)
-		len++;
-	while (0 < n || n < 0)
-	{
-		n /= 10;
-		len++;
-	}
-	return (len);
+	unsigned char	i;
+
+	i = 0;
+	if (num <= 0)
+		i++;
+	while (!!num && ++i)
+		num /= 10;
+	return ((int)i);
 }
 
-char	*ft_itoa(int nbr)
+char	*ft_itoa(int n)
 {
-	char	*arr;
-	int		len;
+	unsigned char	len;
+	long			nb;
+	char			*arr;
 
-	len = numlen(nbr);
-	arr = (char *)malloc(sizeof(char) * (len + 1));
-	arr[len] = '\0';
-	if (nbr < 0)
-		arr[0] = '-';
-	if (nbr < 0)
-		nbr = -nbr;
-	else if (!nbr)
-		arr[0] = '0';
-	while (nbr)
+	nb = n;
+	len = ft_numlen(nb);
+	arr = (char *)ft_calloc(sizeof(char), len + 1);
+	if (!arr)
+		return (NULL);
+	if (nb < 0)
+		*arr = 45;
+	if (!nb)
+		*arr = '0';
+	nb *= !!(nb > 0) - !!(nb < 0);
+	while (!!nb)
 	{
-		arr[--len] = nbr % 10 + '0';
-		nbr /= 10;
+		arr[--len] = nb % 10 + 48;
+		nb /= 10;
 	}
 	return (arr);
 }
