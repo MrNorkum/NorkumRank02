@@ -14,5 +14,5 @@ int		main(int ac, char **av)
 			return (write(1, "1\n", 2), 0);
 		return (write(1, "0\n", 2), 0);
 	}
-	return ((1, "\n", 1), 0);
+	return (write(1, "\n", 1), 0);
 }
