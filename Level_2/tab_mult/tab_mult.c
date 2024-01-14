@@ -2,21 +2,21 @@
 
 int ft_atoi(char *s, int res)
 {
-	if('0' <= *s && *s <= '9')
+	if ('0' <= *s && *s <= '9')
 		return (ft_atoi(s + 1, res * 10 + *s - '0'));
 	return (res);
 }
 
 void putnbr(int n)
 {
-	if(n > 9)
+	if (n > 9)
 		putnbr(n / 10);
 	write(1, &"0123456789"[n % 10], 1);
 }
 
 int main(int ac, char** av)
 {
-	for(int i = 1; ac == 2 && i <= 9; i++)
+	for (int i = 1; ac == 2 && i <= 9; i++)
 	{
 		putnbr(i);
 		write(1, " x ", 3);
