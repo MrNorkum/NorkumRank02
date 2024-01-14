@@ -25,5 +25,5 @@ int main(int ac, char** av)
 		putnbr(i * ft_atoi(av[1], 0));
 		write(1, "\n", 1);
 	}
-	return ((1, "\n", (ac != 2)), 0);
+	return (write(1, "\n", (ac != 2)), 0);
 }
