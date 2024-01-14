@@ -19,16 +19,11 @@ void	str_capitalizer(char *str)
 {
 	while (*str)
 	{
-		while (*str && is_word_final(*str))
-			write(1, str++, 1);
-		while (!is_word_final(*str))
-		{
-			if (is_low(*str) && is_word_final(*(str + 1)))
-				*str -= 32;
-			else if (is_up(*str) && is_word_final(*(str + 1)))
-				*str += 32;
-			write(1, str++, 1);
-		}
+		if (is_low(*str) && is_word_final(*(str + 1)))
+			*str -= 32;
+		if (is_up(*str) && !is_word_final(*(str + 1)))
+			*str += 32;
+		write(1, str++, 1);
 	}
 	write(1, "\n", 1);
 }
